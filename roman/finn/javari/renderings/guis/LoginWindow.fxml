@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane fx:id="stackpane" prefHeight="409.0" prefWidth="643.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="roman.finn.javari.renderings.guis.LoginController">
+   <children>
+      <AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="412.0" prefWidth="643.0">
+         <children>
+            <Pane fx:id="loginPane" layoutX="-1.0" layoutY="-2.0" prefHeight="418.0" prefWidth="643.0">
+               <children>
+                  <JFXButton fx:id="login" buttonType="RAISED" layoutX="163.0" layoutY="332.0" onAction="#checkLogin" prefHeight="37.0" prefWidth="294.0" style="-fx-background-color: #2980b9;" text="Login" textFill="WHITE">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXTextField fx:id="userbox" focusColor="#2980b9" labelFloat="true" layoutX="164.0" layoutY="127.0" prefHeight="28.0" prefWidth="294.0" promptText="Username">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <Label layoutX="153.0" layoutY="45.0" text="Please login with your username and password">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <JFXCheckBox fx:id="checkbox" checkedColor="#2980b9" layoutX="157.0" layoutY="254.0" onMouseEntered="#renderlabel" prefHeight="17.0" prefWidth="192.0" text="I have read and agree to the" />
+                  <Label layoutX="192.0" layoutY="276.0" text="If the checkbox is selected, you automatically " />
+                  <Label layoutX="192.0" layoutY="293.0" text="agree to the Terms of Service." />
+                  <JFXHamburger layoutX="88.0" layoutY="47.0" />
+                  <Label fx:id="tosLabel" layoutX="344.0" layoutY="254.0" onMouseClicked="#openTOS" text="Terms of Service." textFill="#294bc6">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Label>
+                  <JFXPasswordField fx:id="pwbox" focusColor="#2980b9" labelFloat="true" layoutX="164.0" layoutY="187.0" prefHeight="25.0" prefWidth="294.0" promptText="Password">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXPasswordField>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane fx:id="stackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="458.0" prefWidth="634.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="roman.finn.javari.renderings.guis.MainGuiController">
+   <children>
+      <AnchorPane fx:id="anchorpane" prefHeight="484.0" prefWidth="696.0">
+         <children>
+            <Pane prefHeight="458.0" prefWidth="634.0">
+               <children>
+                  <TabPane fx:id="tabPane" prefHeight="458.0" prefWidth="634.0" tabClosingPolicy="UNAVAILABLE">
+                     <tabs>
+                        <Tab fx:id="mainTab" text="Javari">
+                          <content>
+                            <AnchorPane fx:id="mainAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Label layoutX="298.0" layoutY="37.0" text="Javari">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="57.0" layoutY="136.0" text="Input Jar" />
+                                    <JFXTextField fx:id="inputBox" focusColor="#2980b9" layoutX="131.0" layoutY="121.0" prefHeight="25.0" prefWidth="411.0" />
+                                    <JFXButton fx:id="inputButton" buttonType="RAISED" layoutX="559.0" layoutY="124.0" onAction="#setInput" style="-fx-background-color: #2980b9;" text="..." textFill="WHITE" />
+                                    <JFXButton fx:id="outputButton" buttonType="RAISED" layoutX="559.0" layoutY="167.0" onAction="#setOutput" style="-fx-background-color: #2980b9;" text="..." textFill="WHITE" />
+                                    <JFXTextField fx:id="outBox" focusColor="#2980b9" layoutX="131.0" layoutY="164.0" prefHeight="25.0" prefWidth="411.0" />
+                                    <Label layoutX="52.0" layoutY="179.0" text="Output Jar" />
+                                    <Label layoutX="59.0" layoutY="220.0" text="Librarys" />
+                                    <JFXTextField fx:id="libBox" focusColor="#2980b9" layoutX="131.0" layoutY="205.0" prefHeight="25.0" prefWidth="411.0" promptText="this field isn't required" />
+                                    <JFXButton fx:id="libButton" buttonType="RAISED" layoutX="559.0" layoutY="208.0" onAction="#setLibs" style="-fx-background-color: #2980b9;" text="..." textFill="WHITE" />
+                                    <JFXButton fx:id="ObfuscateButton" buttonType="RAISED" layoutX="244.0" layoutY="330.0" onAction="#startObf" prefHeight="25.0" prefWidth="147.0" style="-fx-background-color: #2980b9;" text="Obfuscate" textFill="WHITE">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </JFXButton>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                        <Tab fx:id="settingsTab" onSelectionChanged="#showSettings" text="Settings">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Label layoutX="289.0" layoutY="29.0" text="Settings">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <JFXCheckBox fx:id="fieldRenamerCheck" checkedColor="#2980b9" layoutX="30.0" layoutY="85.0" onAction="#setFieldRenamer" onMouseEntered="#getFieldRenamerDesc" text="FieldRenamer" />
+                                    <JFXCheckBox fx:id="methodRenamerCheck" checkedColor="#2980b9" layoutX="30.0" layoutY="111.0" onAction="#setMethodRenamer" onMouseEntered="#getMethodRenamerDesc" text="MethodRenamer" />
+                                    <JFXCheckBox fx:id="localFieldRenamerCheck" checkedColor="#2980b9" layoutX="30.0" layoutY="138.0" onAction="#setLocalFieldRenamer" onMouseEntered="#getLocalFieldRenamerDesc" text="LocalFieldRenamer" />
+                                    <JFXCheckBox fx:id="lineNumberObfCheck" checkedColor="#2980b9" layoutX="250.0" layoutY="85.0" onAction="#setLineNumberObf" onMouseEntered="#getLineNumberObfDesc" text="LineNumberObfuscation" />
+                                    <JFXCheckBox fx:id="stringEncryptionCheck" checkedColor="#2980b9" layoutX="30.0" layoutY="191.0" onAction="#setStringEncryption" onMouseEntered="#getStringEncryptionDesc" text="StringEncryption" />
+                                    <JFXCheckBox fx:id="varDuplicatorCheck" checkedColor="#2980b9" layoutX="30.0" layoutY="165.0" onAction="#setVarDuplicator" onMouseEntered="#getVarDuplicatorDesc" text="VarDuplicator" />
+                                    <JFXCheckBox fx:id="classHiderCheck" checkedColor="#2980b9" layoutX="250.0" layoutY="165.0" onAction="#setClassHider" onMouseEntered="#getClassHiderDesc" text="ClassHider" />
+                                    <JFXCheckBox fx:id="badPopCheck" checkedColor="#2980b9" layoutX="250.0" layoutY="191.0" onAction="#setBadPop" onMouseEntered="#getBadPopDesc" text="BadPop" />
+                                    <JFXCheckBox fx:id="badTryCatchCheck" checkedColor="#2980b9" layoutX="250.0" layoutY="138.0" onAction="#setBadTryCatch" onMouseEntered="#getBadTryCatchDesc" text="BadTryCatch" />
+                                    <JFXCheckBox fx:id="finalRenamerCheck" checkedColor="#2980b9" layoutX="250.0" layoutY="111.0" onAction="#setFinalRenamer" onMouseEntered="#getFinalRenamerDesc" text="FinalRenamer" />
+                                    <JFXCheckBox fx:id="trashCodeCheck" checkedColor="#2980b9" layoutX="504.0" layoutY="85.0" onAction="#setTrashCode" onMouseEntered="#getTrashCodeDesc" text="TrashCode" />
+                                    <JFXCheckBox fx:id="keepPackageCheck" checkedColor="#2980b9" layoutX="30.0" layoutY="245.0" onAction="#setKeepPackage" onMouseEntered="#getKeepPackageDesc" text="Keep Package" />
+                                    <JFXCheckBox fx:id="classRenamerCheck" checkedColor="#2980b9" layoutX="30.0" layoutY="282.0" onAction="#setClassRenamer" onMouseEntered="#getClassRenamerDesc" text="Class Renamer" />
+                                    <JFXTextField fx:id="keepPackageTxt" focusColor="#2980b9" layoutX="153.0" layoutY="232.0" />
+                                    <JFXTextField fx:id="keepMainTxt" focusColor="#2980b9" layoutX="153.0" layoutY="268.0" promptText="Main class" />
+                                    <JFXTextField fx:id="newPackageTxt" focusColor="#2980b9" layoutX="153.0" layoutY="293.0" promptText="new package name" />
+                                    <JFXSlider fx:id="obfStrengthSlider" layoutX="388.0" layoutY="311.0" min="1.0" onDragEntered="#getGetStrengthSliderDesc" />
+                                    <Label layoutX="402.0" layoutY="248.0" text="Obfuscation strength" />
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                        <Tab fx:id="accountTab" onSelectionChanged="#loadUserData" text="Account">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Label layoutX="288.0" layoutY="30.0" text="Account">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="43.0" layoutY="92.0" text="Support id:" />
+                                    <Label layoutX="43.0" layoutY="115.0" text="Name:" />
+                                    <Label layoutX="43.0" layoutY="142.0" text="Payment:" />
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                     </tabs>
+                  </TabPane>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
